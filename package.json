@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "predev": "eslint 'index.js'",
-    "start": "babel-node --presets es2015,stage-0",
+    "start": "babel-node index.js --presets es2015,stage-0",
     "dev": "npm start",
     "nodemon": "NODE_ENV=dev nodemon index.js --exec 'npm run dev'",
     "test": "echo \"Error: no test specified\" && exit 1"
