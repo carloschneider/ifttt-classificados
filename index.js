@@ -47,15 +47,13 @@ app.get('/', (req, res) => {
         return false;
       }
 
-      const title = capitalize($el.find('.pointer a').text());
-      const link = fullLink($el.find('.pointer a').attr('href'));
       const price = $el.find('td').eq(6).text();
+      const title = `${capitalize($el.find('.pointer a').text())} - Preço: ${price}`;
+      const link = fullLink($el.find('.pointer a').attr('href'));
 
       return ads.rss['#'].channel['#'].item.push({
-        id,
         title,
         link,
-        price,
       });
     });
 
