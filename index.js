@@ -21,7 +21,7 @@ function fullLink(link) {
 app.get('/', (req, res) => {
   const ads = {
     '?xml version="1.0" encoding="UTF-8"?': null,
-    xml: {
+    rss: {
       '@': {
         version: '2.0',
       },
@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
       const link = fullLink($el.find('.pointer a').attr('href'));
       const price = $el.find('td').eq(6).text();
 
-      return ads.xml['#'].channel['#'].item.push({
+      return ads.rss['#'].channel['#'].item.push({
         id,
         title,
         link,
