@@ -21,11 +21,18 @@ function fullLink(link) {
 app.get('/', (req, res) => {
   const ads = {
     '?xml version="1.0" encoding="UTF-8"?': null,
-    channel: {
+    xml: {
+      '@': {
+        version: '2.0',
+      },
       '#': {
-        title: 'Classificados UFSC RSS',
-        description: 'Gera um XML com os imóveis postados nos classificados UFSC para ser usado no IFTTT',
-        item: [],
+        channel: {
+          '#': {
+            title: 'Classificados UFSC RSS',
+            description: 'Gera um XML com os imóveis postados nos classificados UFSC para ser usado no IFTTT',
+            item: [],
+          },
+        },
       },
     },
   };
@@ -44,7 +51,7 @@ app.get('/', (req, res) => {
       const link = fullLink($el.find('.pointer a').attr('href'));
       const price = $el.find('td').eq(6).text();
 
-      return ads.channel['#'].item.push({
+      return ads.xml['#'].channel['#'].item.push({
         id,
         title,
         link,
