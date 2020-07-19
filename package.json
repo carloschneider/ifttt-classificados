@@ -1,46 +1,24 @@
 {
   "name": "ifttt-classificados",
-  "version": "1.0.0",
-  "description": "Gera um XML com os imóveis postados nos classificados UFSC para ser usado no IFTTT",
+  "version": "2.0.0",
   "main": "index.js",
+  "repository": "git@github.com:carloschneider/ifttt-classificados.git",
+  "license": "MIT",
   "scripts": {
-    "predev": "eslint 'index.js'",
-    "start": "babel-node index.js --presets es2015,stage-0",
-    "dev": "npm start",
-    "nodemon": "NODE_ENV=dev nodemon index.js --exec 'npm run dev'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules --project tsconfig.server.json ./src/server.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carloschneider/ifttt-classificados.git"
-  },
-  "keywords": [
-    "ifttt",
-    "xml",
-    "classificados",
-    "ufsc"
-  ],
-  "author": "Carlo Schneider",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/carloschneider/ifttt-classificados/issues"
-  },
-  "homepage": "https://github.com/carloschneider/ifttt-classificados#readme",
   "dependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "cheerio": "^0.22.0",
-    "express": "^4.14.0",
-    "fetch": "^1.1.0",
-    "object-to-xml": "^1.1.0"
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "fastify": "^2.15.0",
+    "lodash": "^4.17.15",
+    "ssl-root-cas": "^1.3.1"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "@types/cheerio": "^0.22.18",
+    "@types/lodash": "^4.14.155",
+    "@types/node": "^14.0.13",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5"
   }
 }
