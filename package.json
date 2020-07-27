@@ -1,7 +1,7 @@
 {
   "name": "ifttt-classificados",
   "version": "2.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "repository": "git@github.com:carloschneider/ifttt-classificados.git",
   "license": "MIT",
   "scripts": {
