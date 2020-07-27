@@ -1,6 +1,17 @@
 interface IXML {
   '?xml version="1.0" encoding="UTF-8"?': null
-  rss: Object
+  rss: {
+    '@': Object
+    '#': {
+      channel: {
+        '#': {
+          item: object[],
+          title: string,
+          description: string
+        }
+      }
+    }
+  }
 }
 
 export const xmlBase = (): IXML => {
@@ -8,17 +19,17 @@ export const xmlBase = (): IXML => {
     '?xml version="1.0" encoding="UTF-8"?': null,
     rss: {
       '@': {
-        version: '2.0',
+        version: '2.0'
       },
       '#': {
         channel: {
           '#': {
             title: 'Classificados UFSC RSS',
             description: 'Gera um XML com os imóveis postados nos classificados UFSC para ser usado no IFTTT',
-            item: [],
-          },
-        },
-      },
-    },
+            item: []
+          }
+        }
+      }
+    }
   }
 }

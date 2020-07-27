@@ -1,4 +1,10 @@
 ### Node ###
+# Dist
+dist
+
+# Testing
+coverage
+
 # Logs
 logs
 *.log
