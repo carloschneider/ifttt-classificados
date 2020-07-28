@@ -9,11 +9,12 @@
     "yarn": "1.22.x"
   },
   "scripts": {
-    "build": "babel src --extensions .ts --out-dir dist --copy-files --no-copy-ignored",
+    "build": "./node_modules/.bin/babel src --extensions .ts --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify ./src/server.ts",
     "test": "jest",
-    "coverage": "jest --watchAll --coverage"
+    "coverage": "jest --watchAll --coverage",
+    "heroku-prebuild": "rm -rf node_modules"
   },
   "dependencies": {
     "axios": "^0.19.2",
