@@ -4,6 +4,10 @@
   "main": "dist/server.js",
   "repository": "git@github.com:carloschneider/ifttt-classificados.git",
   "license": "MIT",
+  "engines": {
+    "node": "14.4.x",
+    "yarn": "1.22.x"
+  },
   "scripts": {
     "build": "babel src --extensions .ts --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
