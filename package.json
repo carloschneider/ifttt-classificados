@@ -5,7 +5,7 @@
   "repository": "git@github.com:carloschneider/ifttt-classificados.git",
   "license": "MIT",
   "engines": {
-    "node": "14.4.x",
+    "node": "14.x",
     "yarn": "1.22.x"
   },
   "scripts": {
